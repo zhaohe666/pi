@@ -41,29 +41,35 @@ async function loadTools() {
   }
 }
 
-function renderTools(tools) {
-  grid.innerHTML = tools.map(t => {
-    const meta = TOOL_META[t.slug] || { icon: '✦', tag: 'AI', gradient: 'var(--gradient)' };
-    return `
-      <article class="tool-card" data-slug="${t.slug}" data-name="${t.name}" data-desc="${t.description}">
-        <span class="tool-tag">${meta.tag}</span>
-        <div class="tool-icon" style="background:${meta.gradient}">${meta.icon}</div>
-        <h3>${t.name}</h3>
-        <p>${t.description}</p>
-        <span class="tool-cta">Try Now</span>
-      </article>
-    `;
-  }).join('');
+function escapeHtml(s) {
+  return String(s ?? '').replace(/[&<>"']/g, c => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[c]));
+}
 
-  grid.querySelectorAll('.tool-card').forEach(card => {
+function renderTools(tools) {
+  grid.innerHTML = '';
+  for (const t of tools) {
+    const meta = TOOL_META[t.slug] || { icon: '✦', tag: 'AI', gradient: 'var(--gradient)' };
+    const card = document.createElement('article');
+    card.className = 'tool-card';
+    card.dataset.slug = t.slug;
+    card.dataset.name = t.name;
+    card.dataset.desc = t.description;
+    card.innerHTML = `
+      <span class="tool-tag">${escapeHtml(meta.tag)}</span>
+      <div class="tool-icon" style="background:${escapeHtml(meta.gradient)}">${escapeHtml(meta.icon)}</div>
+      <h3></h3>
+      <p></p>
+      <span class="tool-cta">Try Now</span>
+    `;
+    card.querySelector('h3').textContent = t.name;
+    card.querySelector('p').textContent = t.description;
     card.addEventListener('click', () => {
-      openTool({
-        slug: card.dataset.slug,
-        name: card.dataset.name,
-        description: card.dataset.desc
-      });
+      openTool({ slug: t.slug, name: t.name, description: t.description });
     });
-  });
+    grid.appendChild(card);
+  }
 }
 
 function openTool(tool) {

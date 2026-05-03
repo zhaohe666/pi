@@ -184,14 +184,25 @@ function updateJob(jobId, patch) {
   return jobsApi.get(jobId);
 }
 
+function sanitizeText(value, maxLen) {
+  if (typeof value !== 'string') return '';
+  return value.replace(/[<>\x00-\x1F\x7F]/g, '').slice(0, maxLen).trim();
+}
+
 function updateTool(slug, patch) {
   const allowed = { name: 'name', description: 'description', enabled: 'enabled', credits: 'credits', category: 'category' };
   const sets = [];
   const params = [];
   for (const [key, col] of Object.entries(allowed)) {
     if (key in patch) {
+      let value = patch[key];
+      if (key === 'enabled') value = value ? 1 : 0;
+      else if (key === 'credits') value = Math.max(0, Math.min(100, parseInt(value, 10) || 0));
+      else if (key === 'name') value = sanitizeText(value, 80);
+      else if (key === 'description') value = sanitizeText(value, 240);
+      else if (key === 'category') value = sanitizeText(value, 40);
       sets.push(`${col} = ?`);
-      params.push(key === 'enabled' ? (patch[key] ? 1 : 0) : patch[key]);
+      params.push(value);
     }
   }
   if (!sets.length) return toolsApi.get(slug);
