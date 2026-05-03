@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ImgKits Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/admin/admin.css" />
+</head>
+<body class="admin-body">
+  <div id="login-view" class="login-wrap" hidden>
+    <div class="login-card">
+      <div class="logo" style="margin-bottom: 18px;">
+        <span class="logo-mark">
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+            <defs><linearGradient id="alg" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#a855f7"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient></defs>
+            <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#alg)"/>
+            <path d="M9 21l4-6 3 4 3-3 4 5H9z" fill="#fff"/>
+            <circle cx="11" cy="11" r="2" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="logo-text">ImgKits Admin</span>
+      </div>
+      <h2>Sign in</h2>
+      <p class="muted" style="margin-bottom: 24px;">Use your administrator credentials to continue.</p>
+      <form id="login-form">
+        <label class="field">
+          <span>Email</span>
+          <input class="input" type="email" name="email" value="admin@imgkits.local" required />
+        </label>
+        <label class="field">
+          <span>Password</span>
+          <input class="input" type="password" name="password" value="admin123" required />
+        </label>
+        <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+        <div id="login-error" class="job-status error" hidden></div>
+      </form>
+      <p class="muted" style="margin-top: 18px; font-size: 13px;">Default: admin@imgkits.local / admin123</p>
+    </div>
+  </div>
+
+  <div id="app-view" hidden>
+    <aside class="admin-sidebar">
+      <div class="sidebar-logo">
+        <span class="logo-mark">
+          <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+            <defs><linearGradient id="alg2" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#a855f7"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient></defs>
+            <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#alg2)"/>
+            <path d="M9 21l4-6 3 4 3-3 4 5H9z" fill="#fff"/>
+            <circle cx="11" cy="11" r="2" fill="#fff"/>
+          </svg>
+        </span>
+        <span>Admin</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#dashboard" data-route="dashboard"><span class="ico">📊</span>Dashboard</a>
+        <a href="#jobs"      data-route="jobs"><span class="ico">⚙️</span>Jobs</a>
+        <a href="#users"     data-route="users"><span class="ico">👥</span>Users</a>
+        <a href="#tools"     data-route="tools"><span class="ico">🧰</span>Tools</a>
+        <a href="#api-keys"  data-route="api-keys"><span class="ico">🔑</span>API Keys</a>
+        <a href="#settings"  data-route="settings"><span class="ico">⚡</span>Settings</a>
+        <a href="#audit"     data-route="audit"><span class="ico">📜</span>Audit Logs</a>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="/" target="_blank" rel="noopener">↗ View site</a>
+        <a href="/api/docs" target="_blank" rel="noopener">↗ API docs</a>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <h1 id="page-title">Dashboard</h1>
+        <div class="topbar-right">
+          <span id="user-chip" class="user-chip"></span>
+          <button id="logout-btn" class="btn btn-outline">Logout</button>
+        </div>
+      </header>
+      <div id="page-content" class="page-content">
+        <div class="loader">Loading…</div>
+      </div>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="/admin/admin.js"></script>
+</body>
+</html>
