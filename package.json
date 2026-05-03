@@ -1,0 +1,24 @@
+{
+  "name": "imgkits-clone",
+  "version": "1.0.0",
+  "description": "AI image and video editing platform with Swagger-documented REST API",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js"
+  },
+  "keywords": [
+    "ai",
+    "image-editing",
+    "swagger",
+    "openapi"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  }
+}

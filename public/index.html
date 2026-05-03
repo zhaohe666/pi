@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ImgKits Clone — All-in-One AI Image & Video Editor</title>
+  <meta name="description" content="One-stop AI image & video editor. Remove backgrounds, restore photos, generate flyers, transfer styles and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <span class="logo-mark">
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="lg" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#a855f7"/>
+                <stop offset="100%" stop-color="#06b6d4"/>
+              </linearGradient>
+            </defs>
+            <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#lg)"/>
+            <path d="M9 21l4-6 3 4 3-3 4 5H9z" fill="#fff"/>
+            <circle cx="11" cy="11" r="2" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="logo-text">ImgKits</span>
+      </a>
+
+      <nav class="nav">
+        <div class="nav-item has-dropdown">
+          <a href="#tools">AI Tools <span class="caret">▾</span></a>
+          <div class="dropdown">
+            <a href="#tools">All Tools</a>
+            <a href="#tools">Background Remover</a>
+            <a href="#tools">Photo Restore</a>
+            <a href="#tools">Object Remover</a>
+            <a href="#tools">Photo to Art</a>
+          </div>
+        </div>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="/api/docs" target="_blank" rel="noopener">API Docs</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#" class="btn btn-ghost">Login</a>
+        <a href="#tools" class="btn btn-primary">Try Free</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="bg-blob blob-a"></div>
+      <div class="bg-blob blob-b"></div>
+      <div class="container hero-inner">
+        <span class="eyebrow">✨ Trusted by 10,000+ creators</span>
+        <h1 class="hero-title">
+          One-stop <span class="grad">AI Image &amp; Video</span><br/>
+          Editor for Everyone
+        </h1>
+        <p class="hero-sub">
+          Remove backgrounds, restore old photos, transform shots into anime art,
+          and generate fresh visuals — no design skills required.
+        </p>
+        <div class="hero-cta">
+          <a href="#tools" class="btn btn-primary btn-lg">Start Editing — Free</a>
+          <a href="/api/docs" target="_blank" rel="noopener" class="btn btn-outline btn-lg">View API Docs</a>
+        </div>
+        <div class="trust-row">
+          <div class="trust-item"><strong>10K+</strong><span>Active users</span></div>
+          <div class="trust-item"><strong>50M+</strong><span>Images processed</span></div>
+          <div class="trust-item"><strong>99.9%</strong><span>Uptime</span></div>
+          <div class="trust-item"><strong>4.9★</strong><span>User rating</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools" class="tools-section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">AI Tools</span>
+          <h2>Everything you need in one place</h2>
+          <p>Pick a tool below — every one runs entirely from your browser.</p>
+        </div>
+
+        <div id="tools-grid" class="tools-grid">
+          <!-- Tool cards rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features-section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Why ImgKits</span>
+          <h2>Pro-grade results without the learning curve</h2>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon" style="background:linear-gradient(135deg,#a855f7,#ec4899)">⚡</div>
+            <h3>Lightning Fast</h3>
+            <p>Most edits finish in under 5 seconds, even for hi-res photos.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" style="background:linear-gradient(135deg,#06b6d4,#3b82f6)">🔒</div>
+            <h3>Private &amp; Secure</h3>
+            <p>SSL encrypted. Uploads are auto-deleted after processing.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">📦</div>
+            <h3>Batch Processing</h3>
+            <p>Drop dozens of images at once and let AI handle the rest.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" style="background:linear-gradient(135deg,#10b981,#06b6d4)">🎨</div>
+            <h3>Format Friendly</h3>
+            <p>Works with JPG, PNG, WEBP, HEIC and more, up to 50MP.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" style="background:linear-gradient(135deg,#8b5cf6,#6366f1)">🧠</div>
+            <h3>Smart Defaults</h3>
+            <p>Sensible AI presets get you a great result on the first try.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" style="background:linear-gradient(135deg,#ec4899,#f97316)">💎</div>
+            <h3>HD Output</h3>
+            <p>Export crisp high-resolution results, watermark-free.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="pricing-section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Pricing</span>
+          <h2>Free to try, easy to scale</h2>
+          <p>No hidden fees. Cancel anytime.</p>
+        </div>
+        <div class="pricing-grid">
+          <div class="price-card">
+            <h3>Free</h3>
+            <div class="price"><span class="amount">$0</span><span class="period">/mo</span></div>
+            <ul>
+              <li>5 credits per day</li>
+              <li>Standard resolution</li>
+              <li>Watermark on exports</li>
+              <li>Community support</li>
+            </ul>
+            <a href="#tools" class="btn btn-outline btn-block">Start Free</a>
+          </div>
+          <div class="price-card popular">
+            <span class="badge">Most Popular</span>
+            <h3>Pro</h3>
+            <div class="price"><span class="amount">$9</span><span class="period">/mo</span></div>
+            <ul>
+              <li>500 credits per month</li>
+              <li>HD &amp; 4K resolution</li>
+              <li>No watermark</li>
+              <li>Batch processing</li>
+              <li>Email support</li>
+            </ul>
+            <a href="#" class="btn btn-primary btn-block">Upgrade to Pro</a>
+          </div>
+          <div class="price-card">
+            <h3>Team</h3>
+            <div class="price"><span class="amount">$29</span><span class="period">/mo</span></div>
+            <ul>
+              <li>Unlimited credits</li>
+              <li>API access</li>
+              <li>5 team seats</li>
+              <li>Priority support</li>
+            </ul>
+            <a href="#" class="btn btn-outline btn-block">Contact Sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container cta-inner">
+        <h2>Ready to make your images shine?</h2>
+        <p>Pick a tool, drop an image, get a stunning result in seconds.</p>
+        <a href="#tools" class="btn btn-primary btn-lg">Get Started — Free</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="logo">
+          <span class="logo-mark">
+            <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+              <defs>
+                <linearGradient id="lg2" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#a855f7"/>
+                  <stop offset="100%" stop-color="#06b6d4"/>
+                </linearGradient>
+              </defs>
+              <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#lg2)"/>
+              <path d="M9 21l4-6 3 4 3-3 4 5H9z" fill="#fff"/>
+              <circle cx="11" cy="11" r="2" fill="#fff"/>
+            </svg>
+          </span>
+          <span class="logo-text">ImgKits</span>
+        </div>
+        <p class="muted">All-in-one AI image &amp; video editing for everyone.</p>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <a href="#tools">Background Remover</a>
+        <a href="#tools">Photo Restore</a>
+        <a href="#tools">Photo to Art</a>
+        <a href="#tools">Flyer Generator</a>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <a href="/api/docs" target="_blank" rel="noopener">API Documentation</a>
+        <a href="/api/openapi.json" target="_blank" rel="noopener">OpenAPI Spec</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 ImgKits Clone. All rights reserved.</span>
+      <span class="muted">Made with AI for creators.</span>
+    </div>
+  </footer>
+
+  <!-- Tool Modal -->
+  <div id="tool-modal" class="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card">
+      <button class="modal-close" data-close aria-label="Close">×</button>
+      <div class="modal-header">
+        <div id="modal-icon" class="tool-icon"></div>
+        <div>
+          <h3 id="modal-title">Tool</h3>
+          <p id="modal-desc" class="muted"></p>
+        </div>
+      </div>
+      <div class="modal-body">
+        <label class="upload-area" id="upload-area">
+          <input type="file" id="file-input" accept="image/*" hidden />
+          <div class="upload-inner">
+            <div class="upload-icon">⬆</div>
+            <strong>Drop an image or click to upload</strong>
+            <span class="muted">JPG, PNG, WEBP up to 20MB</span>
+          </div>
+        </label>
+        <div class="or-row"><span>or paste an image URL</span></div>
+        <input type="url" id="image-url" class="input" placeholder="https://example.com/photo.jpg" />
+        <button id="run-btn" class="btn btn-primary btn-block">Run AI</button>
+        <div id="job-status" class="job-status" hidden></div>
+        <div id="result-preview" class="result-preview" hidden>
+          <h4>Result</h4>
+          <img id="result-img" alt="Result" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
